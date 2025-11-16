@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- 添加背景音乐控件 -->
+    <audio id="background-music" loop preload="auto">
+        <source src="./audio/background.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+    </audio>
+    
+    <!-- 添加音乐控制按钮 -->
+    <div id="music-control" class="music-control">
+        <div class="music-button playing"></div>
+    </div>
+
     <div class="viewport-container">
         <!-- 加载页面 -->
         <div id="loading" class="page loading active">
@@ -154,12 +165,44 @@
                 <div class="back-button" data-back="options">← 返回</div>
             </div>
             <div class="content-body">
-                <div class="media-container">
-                    <img src="./images/精彩瞬间/640 (3).jpg" alt="精彩瞬间">
+                <div class="text-content centered">
+                    <p>网传健儿如箭离弦</p>
+                    <p>踏风冲刺争分秒</p>
+                    <p>长短跑征途里</p>
+                    <p>他们稳扎稳打，凭借耐力对抗疲惫</p>
+                    <p>看台呐喊声中每一次加速、每一圈坚持都是赛场最燃的风景</p>
                 </div>
-                <div class="text-content">
-                    <p>民族健身操表演中，悠扬的民族乐曲漫过赛场，网传学子们缓缓起舞，抬手时如天鹅引颈，转体间似流云舒卷，屈膝、摆腰的动作里藏着各民族舞蹈的婉约与灵动。</p>
-                    <p>八段锦表演中，网传方阵队即刻展开身姿，抬手似托轻云，转体如拂微风，每一式都齐整舒展，藏着沉稳的力道，让传统功法的韵味成了运动会上独特的亮色。</p>
+                <div class="media-container">
+                    <img src="./images/精彩瞬间/1.jpg" alt="精彩瞬间">
+                </div>
+                <div class="text-content centered">
+                    <p>校运会跳高赛场跃向晴空的弧线</p>
+                    <p>助跑的脚步声敲着节奏</p>
+                    <p>网传健儿迎着光加速</p>
+                    <p>在起跳点猛地蹬地身体瞬间腾空</p>
+                    <p>像一片轻盈的羽毛脊背弯出流畅的弧度</p>
+                </div>
+                <div class="media-container">
+                    <img src="./images/精彩瞬间/22.jpg" alt="精彩瞬间">
+                </div>
+                <div class="media-container">
+                    <img src="./images/精彩瞬间/333.jpg" alt="精彩瞬间">
+                </div>
+                <div class="text-content centered">
+                    <p>铁饼旋出沉弧，落地溅起细尘</p>
+                    <p>是网传力量的流转</p>
+                    <p>标枪如银箭破空，直奔远方</p>
+                    <p>是速度的奔赴</p>
+                    <p>铅球掷地有砸出深痕，是网传爆发力的绽放</p>
+                </div>
+                <div class="media-container">
+                    <img src="./images/精彩瞬间/444.jpg" alt="精彩瞬间">
+                </div>
+                <div class="media-container">
+                    <img src="./images/精彩瞬间/555.jpg" alt="精彩瞬间">
+                </div>
+                <div class="media-container">
+                    <img src="./images/精彩瞬间/666.jpg" alt="精彩瞬间">
                 </div>
             </div>
         </div>
@@ -225,7 +268,7 @@
             <div class="content-body">
                 <div class="media-tabs">
                     <div class="tab active" data-tab="video">视频</div>
-                    <div class="tab" data-tab="audio">音频</div>
+                    <!-- <div class="tab" data-tab="audio">音频</div> -->
                     <div class="tab" data-tab="gallery">图集</div>
                 </div>
                 

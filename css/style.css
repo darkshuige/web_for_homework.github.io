@@ -905,3 +905,85 @@ textarea:focus {
     height: auto;
     border-radius: 10px;
 }
+
+
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+/* 音乐控制按钮样式 */
+.music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 40px;
+    height: 40px;
+}
+
+.music-button {
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+ 
+.music-button:hover {
+    opacity: 1;
+}
+
+.music-button.playing {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M6 19h4V5H6v14zm8-14v14h4V5h-4z'/%3E%3C/svg%3E");
+}
+
+/* 添加容器来控制9:16比例 */
+.viewport-container {
+    position: relative;
+    width: 100vh; /* 高度为视口宽度 */
+    height: 177.78vh; /* 100 * (16/9) 确保9:16比例 */
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .viewport-container {
+        width: 100vw; /* 宽度为视口宽度 */
+        height: 177.78vw; /* 保持9:16比例 */
+    }
+}
+.text-content.centered {
+    text-align: center;
+}
+
+.text-content.centered p {
+    margin-bottom: 10px;
+}
+
+.text-content.centered {
+    text-align: center;
+    line-height: 1.8; /* 增加行高，使文字更清晰 */
+}
+
+.text-content.centered p {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    letter-spacing: 1px; /* 增加字间距，提升阅读体验 */
+}

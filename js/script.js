@@ -3,6 +3,8 @@ class PageManager {
     constructor() {
         this.currentPage = null;
         this.pages = {};
+        this.audio = null;
+        this.isAudioPlaying = false;
         this.init();
     }
 
@@ -12,6 +14,9 @@ class PageManager {
         pageElements.forEach(page => {
             this.pages[page.id] = page;
         });
+
+        // 初始化音频
+        this.initAudio();
 
         // 显示加载页面
         this.showPage('loading');
@@ -26,6 +31,43 @@ class PageManager {
         // 初始化返回按钮事件
         this.initBackButtons();
         this.initMediaTabs();
+    }
+
+    initAudio() {
+        this.audio = document.getElementById('background-music');
+        const musicControl = document.getElementById('music-control');
+        const musicButton = document.querySelector('.music-button');
+        
+        if (this.audio) {
+            // 尝试自动播放音频
+            const playPromise = this.audio.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    this.isAudioPlaying = true;
+                    musicButton.classList.add('playing');
+                }).catch(error => {
+                    console.log("音频自动播放失败:", error);
+                    this.isAudioPlaying = false;
+                    musicButton.classList.remove('playing');
+                });
+            }
+
+            // 添加音乐控制按钮事件监听
+            musicControl.addEventListener('click', () => {
+                if (this.isAudioPlaying) {
+                    this.audio.pause();
+                    this.isAudioPlaying = false;
+                    musicButton.classList.remove('playing');
+                } else {
+                    this.audio.play().then(() => {
+                        this.isAudioPlaying = true;
+                        musicButton.classList.add('playing');
+                    }).catch(error => {
+                        console.log("音频播放失败:", error);
+                    });
+                }
+            });
+        }
     }
 
     showPage(pageId) {
@@ -100,6 +142,7 @@ class PageManager {
                 }
             });
         });
+// ... existing code ...
 
         // 重启按钮
         const restartButton = document.querySelector('.restart-button');
